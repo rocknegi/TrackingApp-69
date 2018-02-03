@@ -24,6 +24,12 @@
                       
                       </button>
                    </div>
+                   <div class="form-group">
+                    <button type="buton" class="btn btn-primary btn-block" style="margin-bottom: 20px" (click)="loginInWithEmail()" [disabled]="formCtrl.form.invalid">
+                    login with Email
+                    
+                    </button>
+                 </div>
                    
                     <div class="form-group">
                         <button type="buton" class="btn btn-block" (click)="signInWithFacebook()">
