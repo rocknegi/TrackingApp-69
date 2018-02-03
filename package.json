@@ -8,8 +8,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build -- env=prod"
+    "e2e": "ng e2e"
+   
   },
   "engines": {
     "node": "v8.9.4",
