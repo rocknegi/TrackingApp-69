@@ -48,6 +48,11 @@ constructor(private firebaseAuth: AngularFireAuth, private router: Router) {
     )
 }
 
+logout() {
+    this.firebaseAuth.auth.signOut()
+    .then((res) => this.router.navigate(['/']));
+  }
+
 }
 
 
