@@ -11,6 +11,7 @@ import { LoginComponent } from './views/login/login.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from 'app/services/auth-guard.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AuthGuard } from 'app/services/auth-guard.service';
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    FormsModule
     
   ],
   providers: [AuthService,AuthGuard],

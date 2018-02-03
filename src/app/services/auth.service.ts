@@ -61,6 +61,14 @@ logout() {
       }
     }
 
+    signInRegular(email, password) {
+      const credential = firebase.auth.EmailAuthProvider.credential( email, password );
+    
+        return this.firebaseAuth.auth.createUserWithEmailAndPassword(email, password)
+    
+      
+   }
+
 }
 
 
