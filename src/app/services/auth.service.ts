@@ -53,6 +53,14 @@ logout() {
     .then((res) => this.router.navigate(['/']));
   }
 
+  isLoggedIn() {
+    if (this.userDetails == null ) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+
 }
 
 

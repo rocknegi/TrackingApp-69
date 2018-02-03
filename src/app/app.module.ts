@@ -10,12 +10,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './views/login/login.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from 'app/services/auth-guard.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,7 @@ import { AuthService } from './services/auth.service';
     AngularFireAuthModule,
     
   ],
-  providers: [AuthService],
+  providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
  export class AppModule { }
