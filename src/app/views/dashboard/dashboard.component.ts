@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import * as firebase from 'firebase/app';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private firebaseAuth: AngularFireAuth, private router: Router) { }
+
+
+  logout() {
+    this.firebaseAuth.auth.signOut()
+    .then((res) => this.router.navigate(['/']));
+  }
+
 
   ngOnInit() {
   }
