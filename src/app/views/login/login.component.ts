@@ -9,6 +9,11 @@ import { AuthService } from '../../services/auth.service'
 })
 export class LoginComponent implements OnInit {
 
+  user = {
+    email: '',
+    password: ''
+ };
+
   constructor(private authService: AuthService, private router: Router) {
   }
 
@@ -43,6 +48,28 @@ export class LoginComponent implements OnInit {
          })
          .catch((err) => console.log(err));
     }
+
+    signInWithEmail() {
+      this.authService.signInRegular(this.user.email, this.user.password)
+         .then((res) => {
+            console.log(res);
+      
+            this.router.navigate(['dashboard']);
+         })
+         .catch((err) => console.log('error: ' + err));
+   }
+
+   loginInWithEmail() {
+    this.authService.loginInWithEmail(this.user.email, this.user.password)
+       .then((res) => {
+          console.log(res);
+    
+          this.router.navigate(['dashboard']);
+       })
+       .catch((err) => console.log('error: ' + err));
+ }
+
+   
 
   ngOnInit() {
   }

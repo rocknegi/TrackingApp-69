@@ -48,6 +48,30 @@ constructor(private firebaseAuth: AngularFireAuth, private router: Router) {
     )
 }
 
+logout() {
+    this.firebaseAuth.auth.signOut()
+    .then((res) => this.router.navigate(['/']));
+  }
+
+  isLoggedIn() {
+    if (this.userDetails == null ) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+
+    signInRegular(email, password) {
+   
+        return this.firebaseAuth.auth.createUserWithEmailAndPassword(email, password)
+    
+      
+   }
+
+   loginInWithEmail(email, password){
+    return this.firebaseAuth.auth.signInWithEmailAndPassword(email, password)
+   }
+
 }
 
 
