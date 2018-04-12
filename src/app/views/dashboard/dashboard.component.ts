@@ -41,7 +41,7 @@ export class DashboardComponent implements OnInit {
 
   map(){
     if (window.navigator && window.navigator.geolocation) {
-      window.navigator.geolocation.getCurrentPosition(
+      window.navigator.geolocation.watchPosition(
           position => {
               this.geolocationPosition = position,
                   console.log(position)
